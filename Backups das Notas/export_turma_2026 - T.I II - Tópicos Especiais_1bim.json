@@ -1,0 +1,520 @@
+{
+  "exportadoEm": "2026-03-23T16:02:43.427Z",
+  "versao": "6.0",
+  "turma": {
+    "nome": "2026 - T.I II - Tópicos Especiais",
+    "bimestre": 1
+  },
+  "alunos": [
+    {
+      "id": 1774276596452,
+      "nome": "Breno Goulart Silvestre",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276681298,
+      "nome": "Isabella Almeida",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276719029,
+      "nome": "Pedro Henrique S. Gonçalves",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276738876,
+      "nome": "Pedro Ferreira",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276753805,
+      "nome": "Rodrigo Luiz dos Santos Marques",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276788954,
+      "nome": "Estevão Maxwell",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276795551,
+      "nome": "Miguel",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276809838,
+      "nome": "Kaio Santos Sena",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276827036,
+      "nome": "João Victor Rodrigues Soares",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276850868,
+      "nome": "Gabriel da Fonseca Cardoso",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276863555,
+      "nome": "John Prado da Silva",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276873375,
+      "nome": "Maria Gabriella",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276883610,
+      "nome": "Julia Soares",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276942861,
+      "nome": "Barbara Sophia Santos Ribeiro",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276967414,
+      "nome": "Sophia S. Rabelo",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774276980473,
+      "nome": "Gabriel Pereira da Rocha",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    },
+    {
+      "id": 1774277007636,
+      "nome": "Bernardo Schmidt",
+      "bimestres": {
+        "1": {
+          "tarefa": 10,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "2": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "3": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        },
+        "4": {
+          "tarefa": null,
+          "prova": null,
+          "trabalhos": [],
+          "recuperacao": 0
+        }
+      }
+    }
+  ]
+}

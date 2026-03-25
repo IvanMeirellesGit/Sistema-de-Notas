@@ -1,0 +1,850 @@
+:root {
+  --bg-primary: #e0e5ec;
+  --bg-secondary: #e0e5ec;
+  --text-primary: #2c3e50;
+  --text-secondary: #5a6e7c;
+  --shadow-light: #ffffff;
+  --shadow-dark: #a3b1c6;
+  --card-bg: #e0e5ec;
+  --input-bg: #e0e5ec;
+  --border-color: #d0d5dd;
+  --success: #27ae60;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --info: #4a6fa5;
+}
+
+body.dark-mode {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --text-primary: #e0e5ec;
+  --text-secondary: #a0a8b8;
+  --shadow-light: #2a2a3e;
+  --shadow-dark: #0a0a1a;
+  --card-bg: #1e1e2e;
+  --input-bg: #2a2a3a;
+  --border-color: #2a2a3e;
+  --info: #6c5ce7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-primary);
+  min-height: 100vh;
+  padding: 40px 20px;
+  transition: all 0.3s ease;
+}
+
+/* Neumorphism */
+.neumorphic {
+  background: var(--card-bg);
+  border-radius: 40px;
+  box-shadow:
+    9px 9px 16px var(--shadow-dark),
+    -9px -9px 16px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.neumorphic-inset {
+  background: var(--card-bg);
+  border-radius: 30px;
+  box-shadow:
+    inset 5px 5px 10px var(--shadow-dark),
+    inset -5px -5px 10px var(--shadow-light);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-size: 1.1em;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.backup-status {
+  font-size: 12px;
+  margin-top: 10px;
+  color: var(--success);
+}
+
+/* Cards */
+.card {
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.card h2 {
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.neumorphic-input {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  background: var(--input-bg);
+  border-radius: 25px;
+  font-size: 16px;
+  color: var(--text-primary);
+  box-shadow:
+    inset 3px 3px 6px var(--shadow-dark),
+    inset -3px -3px 6px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.neumorphic-input:focus {
+  outline: none;
+  box-shadow:
+    inset 5px 5px 10px var(--shadow-dark),
+    inset -5px -5px 10px var(--shadow-light);
+}
+
+select.neumorphic-input {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c3e50' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 20px;
+}
+
+body.dark-mode select.neumorphic-input {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e0e5ec' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+/* Buttons */
+.neumorphic-btn {
+  padding: 12px 24px;
+  border: none;
+  background: var(--card-bg);
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  box-shadow:
+    5px 5px 10px var(--shadow-dark),
+    -5px -5px 10px var(--shadow-light);
+  transition: all 0.2s ease;
+  margin: 5px;
+}
+
+.neumorphic-btn:active {
+  transform: scale(0.98);
+  box-shadow:
+    inset 3px 3px 6px var(--shadow-dark),
+    inset -3px -3px 6px var(--shadow-light);
+}
+
+.btn-primary {
+  background: linear-gradient(145deg, var(--card-bg), var(--bg-secondary));
+  color: var(--info);
+}
+
+.btn-danger {
+  color: var(--danger);
+}
+
+.btn-success {
+  color: var(--success);
+}
+
+.btn-theme {
+  color: var(--warning);
+}
+
+/* Turma Item */
+.turma-item {
+  padding: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.turma-item:hover {
+  transform: translateX(5px);
+}
+
+.turma-item.active {
+  box-shadow:
+    inset 5px 5px 10px var(--shadow-dark),
+    inset -5px -5px 10px var(--shadow-light);
+}
+
+.turma-nome {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.turma-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.9em;
+}
+
+.turmas-list {
+  margin-top: 25px;
+}
+
+.turmas-list h3 {
+  margin-bottom: 15px;
+  color: var(--text-primary);
+}
+
+/* Tabela */
+.tabela-wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.tabela-notas {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabela-notas th {
+  text-align: left;
+  padding: 12px 8px;
+  color: var(--text-primary);
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.tabela-notas td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.tabela-notas tr:hover {
+  background: rgba(163, 177, 198, 0.1);
+}
+
+/* Campos de Nota */
+.nota-input {
+  width: 70px;
+  padding: 8px;
+  border: none;
+  background: var(--input-bg);
+  border-radius: 15px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--text-primary);
+  box-shadow:
+    inset 2px 2px 5px var(--shadow-dark),
+    inset -2px -2px 5px var(--shadow-light);
+  transition: all 0.2s;
+}
+
+.nota-input:focus {
+  outline: none;
+  box-shadow:
+    inset 3px 3px 8px var(--shadow-dark),
+    inset -3px -3px 8px var(--shadow-light);
+}
+
+/* Status */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 90px;
+}
+
+.status-aprovado {
+  background: var(--success);
+  color: white;
+}
+
+.status-recuperacao {
+  background: var(--warning);
+  color: white;
+}
+
+.status-reprovado {
+  background: var(--danger);
+  color: white;
+}
+
+.btn-acao {
+  padding: 6px 12px;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: var(--card-bg);
+  margin: 5% auto;
+  padding: 0;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 30px;
+  animation: slideIn 0.3s;
+}
+
+.modal-large {
+  max-width: 700px;
+}
+
+.modal-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  color: var(--text-primary);
+}
+
+.close {
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.close:hover {
+  color: var(--danger);
+}
+
+.modal-body {
+  padding: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Tipo de Tarefa Options */
+.tipo-tarefa-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.tipo-tarefa-option {
+  flex: 1;
+  cursor: pointer;
+  margin: 0;
+}
+
+.tipo-tarefa-option input {
+  display: none;
+}
+
+.tipo-tarefa-option input:checked + .option-content {
+  background: linear-gradient(135deg, var(--card-bg), var(--bg-secondary));
+  box-shadow:
+    inset 3px 3px 6px var(--shadow-dark),
+    inset -3px -3px 6px var(--shadow-light);
+  border: 2px solid var(--info);
+}
+
+.option-content {
+  display: block;
+  padding: 15px;
+  background: var(--card-bg);
+  border-radius: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow:
+    5px 5px 10px var(--shadow-dark),
+    -5px -5px 10px var(--shadow-light);
+}
+
+.option-icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.option-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.option-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  display: block;
+}
+
+/* Aluno Tarefa Item */
+.aluno-tarefa-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  margin: 8px 0;
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow:
+    inset 2px 2px 5px var(--shadow-dark),
+    inset -2px -2px 5px var(--shadow-light);
+}
+
+.aluno-tarefa-nome {
+  flex: 2;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.aluno-tarefa-nota {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.aluno-tarefa-nota input {
+  width: 80px;
+  padding: 8px;
+  text-align: center;
+  background: var(--input-bg);
+  border: none;
+  border-radius: 15px;
+  font-size: 14px;
+  color: var(--text-primary);
+  box-shadow:
+    inset 1px 1px 3px var(--shadow-dark),
+    inset -1px -1px 3px var(--shadow-light);
+}
+
+.aluno-tarefa-status {
+  width: 30px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Lista de Trabalhos no Modal */
+.trabalho-item-modal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 8px 0;
+  background: var(--card-bg);
+  border-radius: 15px;
+  box-shadow:
+    inset 2px 2px 5px var(--shadow-dark),
+    inset -2px -2px 5px var(--shadow-light);
+}
+
+.trabalho-info {
+  flex: 1;
+}
+
+.trabalho-nome {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.trabalho-tipo {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 8px;
+}
+
+.trabalho-tipo-normal {
+  background: var(--info);
+  color: white;
+}
+
+.trabalho-tipo-extra {
+  background: var(--warning);
+  color: white;
+}
+
+.trabalho-nota {
+  font-weight: bold;
+  color: var(--info);
+  margin: 0 10px;
+}
+
+.btn-remover-trabalho {
+  padding: 5px 12px;
+  font-size: 12px;
+}
+
+/* Campo de Recuperação */
+.recuperacao-input {
+  width: 70px;
+  padding: 8px;
+  border: none;
+  background: var(--warning);
+  border-radius: 15px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  box-shadow:
+    inset 2px 2px 5px #d35400,
+    inset -2px -2px 5px #f1c40f;
+}
+
+/* Media Conceito */
+.media-conceito {
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--card-bg), var(--bg-secondary));
+  border-radius: 20px;
+  color: var(--text-primary);
+}
+
+/* Relatório */
+.relatorio-area {
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.relatorio-texto {
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+}
+
+.relatorio-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.relatorio-buttons button {
+  flex: 1;
+}
+
+/* Layout */
+.two-columns {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 25px;
+}
+
+.add-aluno {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-aluno input {
+  flex: 1;
+}
+
+.add-trabalho {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-trabalho input {
+  flex: 1;
+}
+
+.bimestre-selector {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 8px 15px;
+  border-radius: 30px;
+  box-shadow:
+    inset 2px 2px 5px var(--shadow-dark),
+    inset -2px -2px 5px var(--shadow-light);
+}
+
+.bimestre-selector label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.bimestre-selector select {
+  width: auto;
+  padding: 8px 30px 8px 15px;
+}
+
+.nova-tarefa-btn {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.nova-tarefa-btn button {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+}
+
+/* Toast */
+.save-indicator {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--success);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  animation: fadeOut 2s ease forwards;
+  z-index: 1000;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .header-content {
+    flex-direction: column;
+  }
+}
+
+.media-cell {
+  font-weight: bold;
+  color: var(--info);
+}
+
+.aluno-nome {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Pesquisa e Filtros */
+.pesquisa-area {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: var(--card-bg);
+  border-radius: 30px;
+  box-shadow:
+    inset 2px 2px 5px var(--shadow-dark),
+    inset -2px -2px 5px var(--shadow-light);
+}
+
+.pesquisa-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pesquisa-input-group input {
+  flex: 1;
+}
+
+.filtros-group {
+  display: flex;
+  gap: 10px;
+}
+
+.filtros-group select {
+  flex: 2;
+}
+
+.filtros-group button {
+  flex: 1;
+}
+
+.resultado-pesquisa {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--info);
+  text-align: center;
+}
+
+.header-controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Indicador de Filtro Ativo */
+.filtro-ativo {
+  background: var(--info);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Modal de Importação */
+.modal-import {
+  max-width: 500px;
+}
+
+.exemplo-csv {
+  background: var(--input-bg);
+  padding: 15px;
+  border-radius: 20px;
+  margin-top: 15px;
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* Botões de Exportação */
+.btn-export-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Grupo de Botões */
+.btn-group {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.btn-group button {
+  margin: 0;
+}
+
+/* Ajuste para os botões no header */
+.header-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Modal de Importação */
+.modal-import {
+  max-width: 500px;
+}
+
+.exemplo-csv {
+  background: var(--input-bg);
+  padding: 15px;
+  border-radius: 20px;
+  margin-top: 15px;
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--text-secondary);
+  overflow-x: auto;
+}

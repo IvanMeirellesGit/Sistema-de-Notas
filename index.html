@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Notas - Pesquisa e Filtros</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header neumorphic">
+            <div class="header-content">
+                <div>
+                    <h1>📚 Sistema de Notas</h1>
+                    <p>Pesquise, filtre e organize seus alunos</p>
+                </div>
+                <div class="header-buttons">
+                    <button class="neumorphic-btn btn-theme" id="btnToggleTheme">🌙 Modo Noturno</button>
+                    <button class="neumorphic-btn btn-primary" id="btnExportarExcel">📊 Exportar Excel</button>
+                    <button class="neumorphic-btn btn-primary" id="btnExportarJSON">💾 Exportar JSON</button>
+                    <div class="btn-group">
+                        <button class="neumorphic-btn btn-primary" id="btnImportarCSV">📂 Importar CSV</button>
+                        <button class="neumorphic-btn btn-primary" id="btnImportarJSON">📂 Importar JSON</button>
+                    </div>
+                    <button class="neumorphic-btn btn-danger" id="btnBackup">🔄 Backup</button>
+                    <input type="file" id="importCSV" accept=".csv" style="display: none;">
+                    <input type="file" id="importJSON" accept=".json" style="display: none;">
+                </div>
+            </div>
+            <div id="backupStatus" class="backup-status">
+                💾 Salvamento automático | Pesquise, filtre e organize seus alunos
+            </div>
+        </div>
+
+        <!-- Resto do conteúdo permanece igual -->
+        <div class="two-columns">
+            <!-- Coluna 1: Turmas -->
+            <div>
+                <div class="card neumorphic">
+                    <h2>🏫 Turmas</h2>
+                    <div class="input-group">
+                        <label>Nome da Turma</label>
+                        <input type="text" id="nomeTurma" class="neumorphic-input" placeholder="Ex: 3° Ano A - Matemática">
+                    </div>
+                    <button class="neumorphic-btn btn-primary" id="btnAdicionarTurma">➕ Adicionar Turma</button>
+                    
+                    <div class="turmas-list">
+                        <h3>Turmas Cadastradas</h3>
+                        <div id="listaTurmas"></div>
+                    </div>
+                </div>
+
+                <div class="card neumorphic">
+                    <h2>📊 Estatísticas</h2>
+                    <div id="estatisticas">
+                        <p>📌 Total de Alunos: <strong id="totalAlunos">0</strong></p>
+                        <p>📈 Média da Turma: <strong id="mediaTurma">0.00</strong></p>
+                        <p>✅ Aprovados: <strong id="aprovados">0</strong></p>
+                        <p>⚠️ Recuperação: <strong id="recuperacao">0</strong></p>
+                        <p>❌ Reprovados: <strong id="reprovados">0</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 2: Alunos e Notas (mesmo conteúdo anterior) -->
+            <div>
+                <div class="card neumorphic">
+                    <div class="card-header">
+                        <h2>👥 Alunos</h2>
+                        <div class="header-controls">
+                            <div id="bimestreSelector" style="display: none;">
+                                <div class="bimestre-selector">
+                                    <label>📅 Bimestre:</label>
+                                    <select id="selectBimestre" class="neumorphic-input">
+                                        <option value="1">1° Bimestre</option>
+                                        <option value="2">2° Bimestre</option>
+                                        <option value="3">3° Bimestre</option>
+                                        <option value="4">4° Bimestre</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="ordenacaoSelector" style="display: none;">
+                                <div class="bimestre-selector">
+                                    <label>📌 Ordenar:</label>
+                                    <select id="selectOrdenacao" class="neumorphic-input">
+                                        <option value="alfabetica">A-Z (Nome)</option>
+                                        <option value="media-crescente">⬆️ Média (crescente)</option>
+                                        <option value="media-decrescente">⬇️ Média (decrescente)</option>
+                                        <option value="status">Status</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Barra de Pesquisa e Filtros -->
+                    <div id="pesquisaArea" style="display: none;" class="pesquisa-area">
+                        <div class="pesquisa-input-group">
+                            <input type="text" id="pesquisaAluno" class="neumorphic-input" placeholder="🔍 Pesquisar aluno por nome...">
+                            <div class="filtros-group">
+                                <select id="filtroStatus" class="neumorphic-input">
+                                    <option value="todos">Todos os alunos</option>
+                                    <option value="aprovado">✅ Aprovados</option>
+                                    <option value="recuperacao">⚠️ Recuperação</option>
+                                    <option value="reprovado">❌ Reprovados</option>
+                                </select>
+                                <button class="neumorphic-btn btn-primary" id="btnLimparFiltros">Limpar Filtros</button>
+                            </div>
+                        </div>
+                        <div class="resultado-pesquisa" id="resultadoPesquisa"></div>
+                    </div>
+                    
+                    <div id="alunosHeader" style="display: none;">
+                        <div class="add-aluno">
+                            <input type="text" id="nomeAluno" class="neumorphic-input" placeholder="Nome do novo aluno">
+                            <button class="neumorphic-btn btn-primary" id="btnAdicionarAluno">➕ Adicionar</button>
+                        </div>
+                    </div>
+
+                    <!-- Botão para Nova Tarefa -->
+                    <div id="btnNovaTarefaArea" style="display: none;" class="nova-tarefa-btn">
+                        <button class="neumorphic-btn btn-success" id="btnAbrirModalTarefa">📋 + Nova Tarefa para Turma</button>
+                    </div>
+                    
+                    <div class="tabela-wrapper">
+                        <table class="tabela-notas">
+                            <thead>
+                                <tr>
+                                    <th>Aluno</th>
+                                    <th>📖 Tarefa Avaliativa</th>
+                                    <th>📝 Prova</th>
+                                    <th>📚 Trabalhos</th>
+                                    <th>➕ Recuperação</th>
+                                    <th>🎯 Média</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="corpoTabela">
+                                <tr>
+                                    <td colspan="8" class="empty-state">Selecione uma turma</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Modal para Criar Nova Tarefa -->
+                <div id="modalNovaTarefa" class="modal">
+                    <div class="modal-content modal-large">
+                        <div class="modal-header">
+                            <h3>📋 Criar Nova Tarefa</h3>
+                            <span class="close" id="fecharModalTarefa">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Nome da Tarefa:</label>
+                                <input type="text" id="novaTarefaNome" class="neumorphic-input" placeholder="Ex: Trabalho de Casa, Exercício, Pesquisa...">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Tipo da Tarefa:</label>
+                                <div class="tipo-tarefa-options">
+                                    <label class="tipo-tarefa-option">
+                                        <input type="radio" name="tipoTarefa" value="normal" checked>
+                                        <span class="option-content">
+                                            <span class="option-icon">📚</span>
+                                            <span class="option-title">Trabalho Normal</span>
+                                            <span class="option-desc">Entra na média do conceito</span>
+                                        </span>
+                                    </label>
+                                    <label class="tipo-tarefa-option">
+                                        <input type="radio" name="tipoTarefa" value="extra">
+                                        <span class="option-content">
+                                            <span class="option-icon">⭐</span>
+                                            <span class="option-title">Nota Extra</span>
+                                            <span class="option-desc">Pontos extras para recuperação (máx +2)</span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="tarefa-alunos-lista">
+                                <h4>Atribuir Notas para cada Aluno:</h4>
+                                <div id="listaAlunosParaTarefa" class="alunos-notas-lista"></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="neumorphic-btn btn-danger" id="btnCancelarTarefa">Cancelar</button>
+                            <button class="neumorphic-btn btn-success" id="btnSalvarTarefa">✅ Salvar Tarefa</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal para Editar Trabalhos Existente -->
+                <div id="modalTrabalhos" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 id="modalAlunoNome">Trabalhos</h3>
+                            <span class="close" id="fecharModal">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="add-trabalho">
+                                <input type="text" id="modalNomeTrabalho" class="neumorphic-input" placeholder="Nome do trabalho">
+                                <input type="number" id="modalNotaTrabalho" class="neumorphic-input" placeholder="Nota" step="0.1" min="0" max="10">
+                                <button class="neumorphic-btn btn-primary" id="btnAdicionarTrabalho">➕</button>
+                            </div>
+                            <div id="modalListaTrabalhos"></div>
+                            <div class="media-conceito">
+                                📊 Média do Conceito: <strong id="modalMediaConceito">0.00</strong>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="neumorphic-btn btn-success" id="btnFecharModal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card neumorphic">
+                    <h2>📋 Relatório</h2>
+                    <div class="relatorio-area neumorphic-inset">
+                        <div id="relatorio" class="relatorio-texto">
+                            Selecione uma turma e bimestre
+                        </div>
+                    </div>
+                    <div class="relatorio-buttons">
+                        <button class="neumorphic-btn btn-success" id="btnGerarRelatorio">📄 Gerar Relatório</button>
+                        <button class="neumorphic-btn btn-primary" id="btnCopiarRelatorio">📋 Copiar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
